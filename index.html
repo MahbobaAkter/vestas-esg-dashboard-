@@ -1,125 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vestas ESG Dashboard Prototype</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vestas ESG Dashboard</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #eef3f4;
-            color: #243142;
-            line-height: 1.6;
-        }
+body {
+    
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #eef3f4;
+    color: #000000;
+    line-height: 1.7;
+}
 
-        header {
-            background: linear-gradient(135deg, #20364a, #4fb398);
-            color: white;
-            text-align: center;
-            padding: 0px 20px 60px;
-        }
 
-        header h1 {
-            margin: 0;
-            font-size: 38px;
-        }
+/* NAVBAR */
+nav {
+    background: #20364a;
+    padding: 12px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        header p {
-            margin-top: 10px;
-            font-size: 18px;
-            opacity: 0.9;
-        }
+nav a {
+    color: white;
+    margin: 6px 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
 
-        .hero img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
+nav a:hover {
+    color: #4fb398;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #20364a, #4fb398);
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+}
 
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
+header h1 {
+    margin: 0;
+}
 
-        h2 {
-            margin-top: 0;
-            color: #20364a;
-        }
+/* HERO */
+.hero img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
 
-        .dashboard-img {
-            width: 100%;
-            border-radius: 12px;
-            margin-top: 15px;
-        }
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #20364a;
+    position: relative;
+}
 
-        .kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
+p {
+    font-size: 16px;
+    color: #141414;
+    margin-bottom: 12px;
+}
 
-        .kpi-box {
-            background: #eaf5f3;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            font-weight: bold;
-            color: #1e8c76;
-        }
+.about-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 10px;
+}
 
-        .pill-row {
-            margin-top: 15px;
-        }
+.about-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #20364a;
+}
 
-        .pill {
-            display: inline-block;
-            background: #e3f2ef;
-            color: #1f7d6c;
-            padding: 8px 15px;
-            margin: 5px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
+.about-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 12px;
+}
 
-        .insight-box {
+/* subtle underline */
+.about-section h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #4fb398;
+    margin-top: 6px;
+}
+
+/* CONTENT */
+.container {
+    
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* KPI */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.kpi-box {
+    background: #eaf5f3;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #1e8c76;
+}
+
+/* INSIGHT */
+.insight-box {
     background: #f7fbfa;
     border-left: 5px solid #4fb398;
     padding: 20px;
     border-radius: 10px;
 }
 
-h2 {
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 5px;
+/* FOOTER */
+.footer {
+    background: linear-gradient(135deg, #4dce96, #0c4533);
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
 }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
-        }
+.footer h2 {
+    margin: 0;
+    letter-spacing: 3px;
+    color: #d7f5e8;
+}
 
-    </style>
+.subtitle {
+    margin-top: 10px;
+    color: #b9c7c1;
+}
+
+
+
+.team-names {
+    line-height: 1.8;
+    color: #c8d6d0;
+}
+
+.source {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #8fa29a;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .hero img {
+        height: 220px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+</style>
 </head>
 
 <body>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#kpi">KPI</a>
+    <a href="#insights">Insights</a>
+    
+</nav>
 
 <header>
     <h1>Vestas ESG Dashboard Prototype</h1>
@@ -127,67 +210,78 @@ h2 {
 </header>
 
 <div class="hero">
-    <img src="wind.jpg" alt="Wind turbines">
+    <img src="wind.jpg">
 </div>
 
 <div class="container">
 
+<div class="card" id="about">
+    <h2>About Vestas</h2>
     <div class="card">
-        <h2>About Vestas</h2>
-        <p>
-            Vestas is a global leader in sustainable energy solutions, specializing in wind energy.
-            This prototype presents ESG (Environmental, Social, Governance) performance in a clear
-            and simple web-based format.
-        </p>
+    <h2>ESG Focus Areas</h2>
 
-        <div class="pill-row">
-            <span class="pill">Environmental Impact</span>
-            <span class="pill">Social Responsibility</span>
-            <span class="pill">Governance Transparency</span>
-        </div>
-    </div>
+    <p><strong>Environmental:</strong> Focus on renewable energy, carbon reduction, and circularity of materials.</p>
 
-    <div class="card">
-        <h2>ESG Dashboard</h2>
-        <p>
-            The dashboard below summarizes key sustainability indicators including emissions,
-            materials, and safety performance.
-        </p>
+    <p><strong>Social:</strong> Emphasis on employee safety, inclusion, and workforce well-being.</p>
 
-        <img src="dashboard.png" class="dashboard-img">
-    </div>
-
-    <div class="card">
-        <h2>Key ESG Indicators</h2>
-
-        <div class="kpi-grid">
-            <div class="kpi-box">🌱 37,000 t CO₂ Avoided</div>
-            <div class="kpi-box">🏗️ 22,000+ t Low-Emission Steel</div>
-            <div class="kpi-box">♻️ Zero-Waste Goal 2040</div>
-            <div class="kpi-box">👷 Safety Focus</div>
-        </div>
-    </div>
-
-<h2>Insights</h2>
-
-<div class="insight-box">
-    <p>
-        Vestas demonstrates strong ESG performance through its leadership in renewable energy 
-        and commitment to decarbonisation. The company’s environmental impact is its strongest pillar, 
-        driven by wind energy solutions and low-emission materials.
-    </p>
-
-    <p>
-        Key sustainability initiatives such as circularity goals and safety-focused operations 
-        indicate continuous improvement in both social and governance areas. Overall, Vestas 
-        is well-positioned as a sustainability-driven industry leader.
-    </p>
+    <p><strong>Governance:</strong> Strong corporate governance, transparency, and sustainability reporting.</p>
+</div>
 </div>
 
+<div class="card" id="dashboard">
+    <h2> ESG Dashboard</h2>
+    <p>
+    The ESG dashboard provides a visual summary of Vestas’ sustainability performance,
+    highlighting key metrics related to emissions reduction, material usage, and safety.
+    It is designed to help users quickly understand ESG impact without technical complexity.
+</p>
+    <img src="dashboard.png" style="width:100%; border-radius:10px;">
 </div>
 
-<footer>
-    ESG Prototype Project | AI Course Submission
+<div class="card" id="kpi">
+    <h2>Key ESG Indicators</h2>
+    <div class="kpi-grid">
+        <div class="kpi-box">🌱 37,000 t CO₂ Avoided</div>
+        <div class="kpi-box">🏗️ 22,000+ t Steel</div>
+        <div class="kpi-box">♻️ Zero Waste 2040</div>
+        <div class="kpi-box">👷 Safety Focus</div>
+    </div>
+</div>
+
+<div class="card" id="insights">
+    <h2>Insights</h2>
+    <div class="insight-box">
+        <p>
+    Vestas demonstrates strong ESG performance, particularly in the environmental dimension,
+    as its core business directly supports renewable energy generation. The company’s efforts
+    in low-emission materials and circularity further strengthen its sustainability position.
+</p>
+
+<p>
+    While environmental impact remains the strongest pillar, continuous improvements in
+    workforce safety and governance transparency indicate a balanced and evolving ESG strategy.
+</p>
+    </div>
+</div>
+
+
+
+
+</div>
+
+<footer class="footer">
+    <h2>VESTAS</h2>
+    <p class="subtitle">Sustainability & ESG Dashboard — Group 08</p>
+
+    <div class="footer-line"></div>
+
+    <p class="team-names">
+        Madura Randika De Zoysa • Nuwan Sundara Mudiyanselage • Shane Dinod Widanlage • Mst Mahboba Akter
+    </p>
+
+    <p class="source">
+        Data sourced from Vestas Annual Report 2023 & ESG Report
+    </p>
 </footer>
 
 </body>
