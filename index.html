@@ -1,90 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Vestas ESG Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestas ESG Dashboard Prototype</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #eef2f5;
             margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #eef3f4;
+            color: #243142;
+            line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #2c3e50, #1abc9c);
+            background: linear-gradient(135deg, #20364a, #4fb398);
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 0px 20px 60px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 38px;
         }
 
         header p {
             margin-top: 10px;
-            font-size: 16px;
+            font-size: 18px;
             opacity: 0.9;
         }
 
+        .hero img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .card {
             background: white;
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-            transition: 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
         h2 {
-            color: #2c3e50;
-            margin-bottom: 10px;
+            margin-top: 0;
+            color: #20364a;
         }
 
-        img {
+        .dashboard-img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 12px;
+            margin-top: 15px;
         }
 
-        ul {
-            line-height: 1.8;
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .kpi {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .kpi div {
-            background: #f4f9f9;
-            padding: 15px;
-            margin: 10px 5px;
-            border-radius: 8px;
-            flex: 1;
-            min-width: 120px;
+        .kpi-box {
+            background: #eaf5f3;
+            border-radius: 12px;
+            padding: 20px;
             text-align: center;
             font-weight: bold;
-            color: #16a085;
+            color: #1e8c76;
         }
+
+        .pill-row {
+            margin-top: 15px;
+        }
+
+        .pill {
+            display: inline-block;
+            background: #e3f2ef;
+            color: #1f7d6c;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .insight-box {
+    background: #f7fbfa;
+    border-left: 5px solid #4fb398;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
 
         footer {
             text-align: center;
             padding: 20px;
-            font-size: 14px;
             color: #777;
         }
+
     </style>
 </head>
 
@@ -95,41 +126,63 @@
     <p>Sustainability Insights & Performance Overview</p>
 </header>
 
+<div class="hero">
+    <img src="wind.jpg" alt="Wind turbines">
+</div>
+
 <div class="container">
 
     <div class="card">
         <h2>About Vestas</h2>
         <p>
             Vestas is a global leader in sustainable energy solutions, specializing in wind energy.
-            The company focuses on reducing carbon emissions, improving circularity, and promoting
-            responsible business practices worldwide.
+            This prototype presents ESG (Environmental, Social, Governance) performance in a clear
+            and simple web-based format.
         </p>
+
+        <div class="pill-row">
+            <span class="pill">Environmental Impact</span>
+            <span class="pill">Social Responsibility</span>
+            <span class="pill">Governance Transparency</span>
+        </div>
     </div>
 
     <div class="card">
         <h2>ESG Dashboard</h2>
-        <img src="dashboard.png" alt="ESG Dashboard">
+        <p>
+            The dashboard below summarizes key sustainability indicators including emissions,
+            materials, and safety performance.
+        </p>
+
+        <img src="dashboard.png" class="dashboard-img">
     </div>
 
     <div class="card">
         <h2>Key ESG Indicators</h2>
 
-        <div class="kpi">
-            <div>🌱 37,000 t CO₂ Avoided</div>
-            <div>🏗️ 22,000+ t Low-Emission Steel</div>
-            <div>♻️ Zero-Waste Goal 2040</div>
-            <div>👷 Safety Focus</div>
+        <div class="kpi-grid">
+            <div class="kpi-box">🌱 37,000 t CO₂ Avoided</div>
+            <div class="kpi-box">🏗️ 22,000+ t Low-Emission Steel</div>
+            <div class="kpi-box">♻️ Zero-Waste Goal 2040</div>
+            <div class="kpi-box">👷 Safety Focus</div>
         </div>
     </div>
 
-    <div class="card">
-        <h2>Insights</h2>
-        <p>
-            Vestas demonstrates strong ESG performance through its commitment to renewable energy,
-            low-emission materials, and sustainability innovation. Environmental impact remains
-            its strongest pillar, supported by continuous improvements in social and governance practices.
-        </p>
-    </div>
+<h2>Insights</h2>
+
+<div class="insight-box">
+    <p>
+        Vestas demonstrates strong ESG performance through its leadership in renewable energy 
+        and commitment to decarbonisation. The company’s environmental impact is its strongest pillar, 
+        driven by wind energy solutions and low-emission materials.
+    </p>
+
+    <p>
+        Key sustainability initiatives such as circularity goals and safety-focused operations 
+        indicate continuous improvement in both social and governance areas. Overall, Vestas 
+        is well-positioned as a sustainability-driven industry leader.
+    </p>
+</div>
 
 </div>
 
